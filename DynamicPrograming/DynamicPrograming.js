@@ -1,3 +1,17 @@
+// https://weibeld.net/algorithms/recursion.html
+// Recursion vs Dynamic Programing vs Memoization  
+
+//Recursion: repeated application of the same procedure on subproblems of the same type 
+// of a problem.
+
+//Dynamic programming: caching the results of the subproblems of a problem, so that 
+//every subproblem is solved only once.
+
+// Recursion risks to solve identical subproblems multiple times. This inefficiency 
+// is addressed and remedied by dynamic programming.
+
+
+
 // http://www.scriptonitejs.com/dynamic-programming/
 
 // optimization problem is the problem of finding the best solution, from all feasible solutions
@@ -16,82 +30,6 @@
 // of calling the function recursively, we run a loop to 
 // find out what the next case results in (based on 
 // previous base case values in an array).
-
-// *****************************************************
-// Fibonachi
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
-// *****************************************************
-
-let COUNT = 5
-
-function recorsiveFibonachi(n) {
-  if(n<2) {
-    return n
-  }
-  return recorsiveFibonachi(n-1) + recorsiveFibonachi(n-2)
-}
-
-let recResponse = recorsiveFibonachi(COUNT)
-//console.log(recResponse)
-
-// We stored our base cases in an array. Then we use a 
-// for-loop to calculate the next sequence. Now in order 
-// to get the next number (which we get by adding the 
-// previous two numbers), we don’t have to do that 
-// calculation at all (because we already stored it in 
-// the array – we simply retrieve it). What’s the runtime
-// complexity of getting a number stored in an array
-// index? Its O(1), which is very fast (constant time)
-
-function DPFibonachi(n) {
-  let sequence = []
-  sequence[0] = 0
-  sequence[1] = 1
-
-  if(n<2) return n
-
-  for(let i=2; i< n; i++) {
-    sequence[i] = sequence[i-1] + sequence[i-2]
-  }
-
-  return sequence
-}
-
-
-let dpResponse = DPFibonachi(COUNT)
-//console.log(dpResponse)
-
-//Our memoize Fibonacci function returns a function that 
-// is the Fibonacci function we eventually call (closure). 
-// The function has access to a cache object. When 
-// Fibonacci is called we do pretty much the same thing 
-// that we did in the recursive solution with a little 
-//twist. Instead of repeatedly calling the function for 
-// every number, we check to see if that number/input has 
-// already been calculated(in cache).
-
-function memoizeFibonacci(n) {
-  let cache = {}
-
-  function fibonacci(n) {
-    let result 
-
-    if(cache[n]) {
-      result = cache[n]
-    } else {
-      if(n<2) return n
-
-      result = fibonacci(n-1) + fibonacci(n-2)
-
-      cache[n] = result
-    }
-    return result
-  }
-  return fibonacci(n)
-}
-
-let memResponse = memoizeFibonacci(COUNT)
-//console.log(memResponse)
 
 
 // *****************************************************
@@ -222,6 +160,28 @@ function TotalRevenueDP(rLen, prices) {
 }
 
 var totalRevDp = TotalRevenueDP(rLength, rPrices);
+
+let Length = 4
+let Prices = [1,5,8,]
+
+function cutRod(price, n) 
+{ 
+   if (n <= 0) 
+     return 0; 
+    let max_val = 0; 
+  
+   // Recursively cut the rod in different pieces and compare different  
+   // configurations 
+   for (let i = 0; i<n; i++) 
+      max_val = Math.max(max_val, price[i] + cutRod(price, n-i-1)); 
+  
+   return max_val; 
+} 
+
+console.log(cutRod(Prices, Length))
+
+
+
 //console.log('Dynamic Programming: Revenue is ', totalRevDp);
 
 // cleaner syntax
@@ -420,13 +380,6 @@ var string_one = "ABACBDAB", //BATD
     lcs = LCS(string_one, string_two)
 
 console.log("Longest Comment Subsequence is: ", lcs);
-
-
-
-
-
-
-
 
 
 

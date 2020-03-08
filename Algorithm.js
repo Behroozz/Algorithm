@@ -135,7 +135,63 @@ function findLagerstDifference2(arr) {
   return Math.max(...result)
 }
 
+function findLargestDifference3(arr) {
+  let i=0
+  let j=1
+  let Max = 0
+
+  if(arr.length === 0 ){
+    return -1
+  }
+
+  if(arr.length === 1) {
+    return arr[0]
+  }
+
+  while(i < arr.length && j < arr.length) {
+    if(arr[i] > arr[j]) {
+      i++
+    } else {
+      let diff = arr[j] - arr[i]
+      if(diff > Max) {
+        Max = diff
+      }
+      j++
+    }
+
+    if(i === j+1) {
+      i++
+      j++
+    }
+  }
+
+  console.log('max', Max)
+  return Max
+}
+
 console.log(findLagerstDifference2(array))
+
+// Final version
+// function findLargestDifference() {
+//   let maxDiff = 0
+
+//   let right = 1
+//   let left = 0
+
+//   while(right < array.length && left <= right) {
+
+//     if(array[right] >= array[left]) {
+//       if( maxDiff < array[right] - array[left]) {  
+//         maxDiff = array[right] - array[left]
+//       }
+//       right+=1
+
+//     } else {
+//       left++ 
+//     }
+//   }
+//   return maxDiff
+// }
 
 //Find Intersection of two array in O(N)
 let firstArray = [2, 2, 4, 1];

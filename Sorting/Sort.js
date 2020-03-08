@@ -1,3 +1,12 @@
+let unsortedArray = [-10, 7, 29, 30, 5, -10, -70, 30, 7]
+function sortIntegers(a, b) {
+  return a - b
+}
+
+console.log(unsortedArray.sort(sortIntegers))
+console.log(Array.from(new Set(unsortedArray)))
+
+
 //const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3]
 // => [2,5,1,3,7] [2,3,8,6,3]
 // 
@@ -36,7 +45,6 @@ console.log(mergeSort(list))
 
 
 //O(nlogn) worst O(n^2)
-
 function QuickSort(array) {
   if(array.length < 2) {
     return array

@@ -124,3 +124,46 @@ myGraph.BFS('C')
 
 
 
+function Queue() {
+ this.queue = {} 
+}
+
+Queue.prototype.enqueue = function(item) {
+  this.queue.push(item)
+}
+
+Queue.prototype.dequeue = function() {
+  return this.queue.shift()
+}
+
+function Graph() {
+  this.adjList = {}
+}
+
+Graph.prototype.addVertex = function(node) {
+  this.adjList[node] = []
+}
+
+Graph.prototype.addEdge = function(v1, v2) {
+  this.adjList[v1].push(v2)
+} 
+
+Graph.prototype.DFS = function() {
+  const nodes = Object.keys(this.adjList)
+  let visited = {}
+  for(let i =0; i< nodes.length; i++) {
+    let node = nodes[i]
+    this.utils(node, visited)
+  }
+}
+
+Graph.prototype.utils = function(node, visited) {
+  if(!visited[node]) {
+    visited[node] =  true
+    let neighbors = this.adjList[node]
+    for(let i=0; i < neighbors.length; i++) {
+      let negihbor = negihbors[i]
+      this.utils(negihbor, visited)
+    }
+  }
+ }

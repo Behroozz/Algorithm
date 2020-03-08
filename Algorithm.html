@@ -5,73 +5,7 @@
 <body>
   <br>
   <script>
-    //Permuation of and array
-    const permutator = (inputArr) => {
-      let result = [];
-      const permute = (arr, m = []) => {
-        if (arr.length === 0) {
-          result.push(m)
-        } else {
-          for (let i = 0; i < arr.length; i++) {
-            let curr = arr.slice();
-            let next = arr.splice(i, 1);
-            permute(curr.slice(), m.concat(next))
-          }
-        }
-      }
-      permute(inputArr)
-      return result;
-    }
-
-    //Approach 2
-    function permutator(array) {
-      let newArray = []
-
-      if(array.length < 2) {
-        return array
-      }
-      for(let i=0; i< array.length; i++){
-        let current = array[i]
-        const remainig = array.filter(item => item != array[i])
-        for(permut of permutator(remainig)) {
-          newArray.push(current + permut)
-        }
-      }
-      return newArray
-    }
-
-    console.log(permutator(['1', '2', '3']))
-   // 123, 132, 213, 231, 312, 321
-
-   //Permuation of a string
-   function permutation(string) {
-      let permutations = []
-      if(string.length < 2) {
-        return string
-      }
-      for(let i=0; i< string.length; i++) {
-        let current = string[i]
-        let remanining = string.slice(0,i) + string.slice(i+1, string.length)
-
-        for(permut of permutation(remanining)){
-          permutations.push(current + permut)
-        }  
-      }
-      return permutations
-    }
-
-    let p = permutation('xyz')
-    console.log(p)
-
-
-    let unsortedArray = [-10, 7, 29, 30, 5, -10, -70, 30, 7]
-    function sortIntegers(a, b) {
-      return a - b
-    }
-
-    console.log(unsortedArray.sort(sortIntegers))
-    console.log(Array.from(new Set(unsortedArray)))
-
+  
     let arrayOfIntegers = [2,5,1,4,9,6,3,7]
     //Being told that an unsorted array contains (n - 1) 
     //of n consecutive numbers (where the bounds are defined), find the missing number in O(n) time

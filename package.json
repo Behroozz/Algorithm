@@ -1,0 +1,23 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Algorithm.js",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Behroozz/Algorithm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Behroozz/Algorithm/issues"
+  },
+  "homepage": "https://github.com/Behroozz/Algorithm#readme"
+}
