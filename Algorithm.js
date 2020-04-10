@@ -103,6 +103,35 @@ function findLargestDifference(array) {
   if (currentMaxDiff <= 0) { return -1 }
   return currentMaxDiff
 }
+
+// sliding window version technique
+function findLargestDifference(nums) {
+  let right = 1
+  let left = 0
+  let largestMax = -Infinity
+  if(nums.length === 0) {
+    return 0
+  }
+
+  if(nums.length === 1) {
+    return nums[0]
+  }
+  
+  while(right < nums.length && left <= right) {
+    console.log('right', nums[right])
+    console.log('left', nums[left])
+
+    let currentDiff = nums[right] - nums[left]
+    if( currentDiff > largestMax) {
+      largestMax = currentDiff
+    }
+    if(nums[right] < nums[left]) {
+      left = right
+    }
+    right +=1
+  }
+  return largestMax
+}
 //13
 // Given an array of integers, find the largest difference between 
 // two elements such that the element of lesser value must come 
@@ -463,8 +492,10 @@ for (let i = 0; i < arr.length; i++) {
 let add2 = adder(2)
 console.log(add2(3))
 
-// Given an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value.
-// Example 1: Input: [1,12,-5,-6,50,3], k = 4 Output: 12.75 Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
+// Given an array consisting of n integers, find the contiguous subarray of 
+// given length k that has the maximum average value. And you need to output the maximum average value.
+// Example 1: Input: [1,12,-5,-6,50,3], k = 4 Output: 12.75 Explanation: 
+// Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
 // Below is my code to solve this using Kadane’s Algorithm.
 
 // Dynamic programing
@@ -514,6 +545,27 @@ let result = []
 }
 
 console.log(maxAverageValue2(myArray, myK))
+
+const findMaxAverage = (arr, k) => {
+  let right = 0
+  let left = 0
+  let currentMax = 0
+  let lengthOfAvg = 0
+
+  while(right < arr.length) {
+    if(lengthOfAvg < k) {
+      currentMax += arr[right]
+      right +=1
+      lengthOfAvg +=1  
+    } else {
+      let max = currentMax - arr[left] + arr[right]
+      currentMax = currentMax < max ? max : currentMax
+      right +=1
+      left +=1
+    }
+  }
+  return currentMax / k
+}
 
 
 // Two-Sum Problem with JavaScript
