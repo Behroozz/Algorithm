@@ -69,8 +69,6 @@ function fordFulkerson(graph, s, t) {
 }
 
 
-
-
 let graph = [
    // 0    1   2   3   4   5
     [ 0, 16,  13, 0,  0,  0 ], // 0

@@ -24,8 +24,7 @@ Graph.prototype.addVertext = function(vertext) {
 }
 
 Graph.prototype.addEdge = function(vertex1, vertex2) {
-  this.adjList[vertex1].push(vertex2
-    )
+  this.adjList[vertex1].push(vertex2)
 }
 
 Graph.prototype.DFS = function() {
