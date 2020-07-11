@@ -1,4 +1,6 @@
 // https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/
+// https://blog.bitsrc.io/a-guide-to-javascript-algorithms-search-4d653be3dca2
+// https://medium.com/better-programming/basic-interview-data-structures-in-javascript-graphs-3f9118aeb078
 // 1 -> [2, 3]
 // 2 -> [3, 4]
 // 3 -> []
@@ -106,6 +108,7 @@ class Graph {
   removeVertex(value) {
     const current = this.nodes.get(value)
     if(current) {
+      // https://alligator.io/js/for-of-for-in-loops/
       for(const node of this.nodes.values()) {
         node.removeAdjacent(current)
       }
@@ -137,8 +140,6 @@ class Graph {
     if(this.edgeDirection === UNDIRECTED) {
       destinationNode.removeAdjacent(sourceNode)  
     }
-
-    const z = new Queue()
 
     return [
       sourceNode, destinationNode
