@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=K_1urzWrzLs
 class Node {
   constructor(name) {
     this.name = name
