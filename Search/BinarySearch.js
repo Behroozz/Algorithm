@@ -23,7 +23,7 @@ const binarySearch= (nums, target) => {
     pivot = Math.floor(right + left / 2)
     if(nums[pivot] === target) {
       return pivot
-    }
+    }   
     if(target < nums[pivot]) {
       right = pivot - 1
     } else {
@@ -36,3 +36,26 @@ const binarySearch= (nums, target) => {
 
 const result = binarySearch([-1,0,3,5,9,12], 9)
 console.log('result', result)
+
+
+// function binarySearch(arr, target) {
+//   if(arr.length === 0) {
+//     return false
+//   }
+
+//   let pivotIndex = Math.floor(arr.length / 2)
+
+//   if(target === arr[pivotIndex]) {
+//     return true
+//   }
+
+//   if(target < arr[pivotIndex]) {
+//     arr = arr.slice(0, pivotIndex)
+//   } else {
+//     arr = arr.slice(pivotIndex+1)
+//   }
+//   return binarySearch(arr, target)
+// }
+
+// const result = binarySearch([1,2,3,4,5,6,7,8], 2)
+// console.log(result)

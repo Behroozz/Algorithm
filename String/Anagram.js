@@ -74,3 +74,25 @@ function equal(obj1, obj2) {
 const result = findAnagrams('cbaebabacd', 'abc')
 console.log('result', result)
 
+
+// function findAnagrams(str, target) {
+//   let indexes = []
+//   let targetLength = target.length
+
+//   if(str.length < target.length) {
+//     return []
+//   }
+
+//   let i = 0
+//   while(i < str.length) {
+//     let chunk =  str.slice(i, i+ targetLength)
+//     if(chunk.length < targetLength) {
+//       break
+//     }
+//     i += 1
+//     if(target.split('').sort().join('') === chunk.split('').concat().sort().join('')) {
+//       indexes.push(chunk)
+//     }
+//   }
+//   return indexes
+// }
