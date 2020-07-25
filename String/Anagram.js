@@ -96,3 +96,41 @@ console.log('result', result)
 //   }
 //   return indexes
 // }
+
+
+// const result = findAnagrams('cbaebabacd', 'abc')
+// console.log('result', result)
+
+// function findAnagrams(str, target) {
+//   const chunks = Chunks(str, target.length)
+//   return chunks.filter(chunk => isAnagram(chunk, target))
+// }
+
+// function Chunks(str, j) {
+//   let chunks= []
+//   let i = 0
+//   while(i < str.length) {
+//     const slice = str.slice(i, i+j)
+//     if(slice.length === j) {
+//       chunks.push(slice)
+//     }    
+//     i++
+//   }
+//   return chunks
+// }
+
+// function isAnagram(str1, str2) {
+//   if(str1.length === 0 || str2.length === 0) {
+//     return false
+//   }
+//   if(str1.length !== str2.length) {
+//     return false
+//   }
+//   return str1.split('').sort().join('') === str2.split('').sort().join('')
+// }
+
+// // console.log(isAnagram('abc', 'cab'))
+// // console.log(isAnagram('ab', 'cab'))
+// // console.log(isAnagram('aa', 'aa'))
+// // console.log(isAnagram('', ''))
+// // console.log(isAnagram('abc', 'edf'))

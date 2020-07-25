@@ -19,8 +19,8 @@ function Graph () {
   this.adjList = {}
 }
 
-Graph.prototype.addVertext = function(vertext) {
-  this.adjList[vertext] = []
+Graph.prototype.addVertex = function(vertex) {
+  this.adjList[vertex] = []
 }
 
 Graph.prototype.addEdge = function(vertex1, vertex2) {
@@ -104,10 +104,10 @@ Graph.prototype._detectCycleUtil = function(vertex, visited, recStack) {
 }
 
 const myGraph = new Graph()
-myGraph.addVertext('A')
-myGraph.addVertext('B')
-myGraph.addVertext('C')
-myGraph.addVertext('D')
+myGraph.addVertex('A')
+myGraph.addVertex('B')
+myGraph.addVertex('C')
+myGraph.addVertex('D')
 
 myGraph.addEdge('A', 'B')
 myGraph.addEdge('A', 'C')
