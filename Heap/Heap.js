@@ -1,4 +1,8 @@
 // https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65
+// https://dandkim.com/js-heap-implementation/
+
+// kLarget or smallest element in O(1)
+
 // Heaps data structure, unlike Object, Map, and Set is not supported natively in JavaScript.
 
 // Heap is tree data-structure, complete tree
@@ -167,23 +171,39 @@ class Heap {
 
 
 
-const testMiniHeap = new Heap()
+const testMiniHeap = new Heap('max')
 console.log(`MinHeap initial min is null, test result:`, testMiniHeap.getMin() === undefined)
-testMiniHeap.insert(10)
-// console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
-testMiniHeap.insert(23)
-//console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
-testMiniHeap.insert(36)
-//console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
-testMiniHeap.insert(32)
+// testMiniHeap.insert(10)
+// // console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
+// testMiniHeap.insert(23)
 // //console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
-testMiniHeap.insert(38)
+// testMiniHeap.insert(36)
 // //console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
-testMiniHeap.insert(45)
-testMiniHeap.insert(57)
+// testMiniHeap.insert(32)
+// // //console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
+// testMiniHeap.insert(38)
+// // //console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
+// testMiniHeap.insert(45)
+// testMiniHeap.insert(57)
 
-testMiniHeap.printHeap()
-testMiniHeap.getMin()
-const head = testMiniHeap.remove()
-console.log('head', head)
+// testMiniHeap.printHeap()
+// testMiniHeap.getMin()
+// const head = testMiniHeap.remove()
+// console.log('head', head)
+// testMiniHeap.printHeap()
+
+const matrix = [
+  [ 1,  5,  9],
+  [10, 11, 13],
+  [12, 13, 15]
+]
+
+
+for(let row=0; row < matrix.length; row++) {
+  for(let col=0; col < matrix[0].length; col++) {
+    console.log('matrix', matrix[row][col])
+    testMiniHeap.insert(matrix[row][col])
+  }    
+}
+
 testMiniHeap.printHeap()
