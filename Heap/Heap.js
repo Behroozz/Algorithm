@@ -207,3 +207,27 @@ for(let row=0; row < matrix.length; row++) {
 }
 
 testMiniHeap.printHeap()
+
+
+
+// insert version 2
+// add(node) {
+//   this.heap.push(node)
+
+//   if (this.heap.length > 0) {
+//     let currentIndx = this.heap.length - 1
+//     let current = this.heap[this.heap.length - 1]
+//     let parent = this.heap[Math.floor(currentIndx / 2)]
+//     console.log('current', current)
+//     console.log('parent', parent)
+
+//     while (currentIndx) {
+//       if(parent > current) {
+//         [this.heap[Math.floor(currentIndx / 2)], this.heap[currentIndx]] = [this.heap[currentIndx], this.heap[Math.floor(currentIndx / 2)]]
+//         currentIndx = Math.floor(currentIndx / 2)
+//       } else {
+//         break
+//       }
+//     }
+//   }
+// }
