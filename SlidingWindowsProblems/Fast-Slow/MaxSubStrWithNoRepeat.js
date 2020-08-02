@@ -35,6 +35,13 @@ function maxLengthChars(str) {
   return getMax(strArray)
 }
 
+function getMax(strArray) {
+  return strArray.reduce((acc, curr) => {
+    acc = curr.length > acc ? curr.length : acc
+    return acc
+  }, 0)
+}
+
 // console.log('Emptry string length is zero', maxLengthChars('') === 0)
 // console.log('String with one char length is one', maxLengthChars('a') === 1)
 // console.log('String with duplicate chars length is one', maxLengthChars('aa') === 1)
@@ -61,12 +68,7 @@ console.log("new test case", maxLengthChars("abcabcbb") === 3)
 
 
 
-function getMax(strArray) {
-  return strArray.reduce((acc, curr) => {
-    acc = curr.length > acc ? curr.length : acc
-    return acc
-  }, 0)
-}
+
 
 
 
