@@ -134,3 +134,24 @@ console.log('result', result)
 // // console.log(isAnagram('aa', 'aa'))
 // // console.log(isAnagram('', ''))
 // // console.log(isAnagram('abc', 'edf'))
+
+
+// const getAnagram = (s, p) => {
+//   let aggregate = []
+//   let counter = p.length
+//   let i = 0
+//   let bucket = []
+//   while(i <= s.length) {
+//     if(bucket.length < counter) {
+//       bucket.push(s.charAt(i))
+//       i++
+//     } else {
+//       if(bucket.sort().join('') === p.split('').sort().join('')) {
+//         aggregate.push(i-counter)
+//       }
+//       bucket = []
+//       i = i - counter + 1
+//     }
+//   }
+//   return aggregate
+// }

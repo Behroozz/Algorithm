@@ -52,7 +52,7 @@ function isPalindrome(s) {
   let i = 0
   let j = s.length - 1
   const l = s.length / 2
-  while(i <  l && j >= 0 ) {
+  while(i <  l && j >= l ) {
       const headChar = s.charAt(i)
       const tailChar = s.charAt(j)
       if(headChar !== tailChar) {
