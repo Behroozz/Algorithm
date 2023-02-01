@@ -171,8 +171,13 @@ class Heap {
 
 
 
-const testMiniHeap = new Heap('max')
+const testMiniHeap = new Heap('min')
 console.log(`MinHeap initial min is null, test result:`, testMiniHeap.getMin() === undefined)
+testMiniHeap.insert(3)
+testMiniHeap.insert(2)
+testMiniHeap.insert(4)
+testMiniHeap.insert(1)
+
 // testMiniHeap.insert(10)
 // // console.log(`MinHeap size after 1 insertion is insertion value, test result:`, testMiniHeap.getMin())
 // testMiniHeap.insert(23)
@@ -186,7 +191,7 @@ console.log(`MinHeap initial min is null, test result:`, testMiniHeap.getMin() =
 // testMiniHeap.insert(45)
 // testMiniHeap.insert(57)
 
-// testMiniHeap.printHeap()
+testMiniHeap.printHeap()
 // testMiniHeap.getMin()
 // const head = testMiniHeap.remove()
 // console.log('head', head)

@@ -38,8 +38,8 @@ function maxHouseRubber(hVal) {
   return Math.max(Math.max(right, left), maxProfit)
 }
 
-const result =  maxHouseRubber([6, 7, 1, 3, 8, 2, 4])
-// const result =  maxHouseRubber([5, 3, 4, 11, 2])
+// const result =  maxHouseRubber([6, 7, 1, 3, 8, 2, 4])
+const result =  maxHouseRubber([5, 3, 4, 11, 2])
 
 console.log('result', result)
 
