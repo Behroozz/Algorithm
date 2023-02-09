@@ -123,28 +123,28 @@
 //   return result;
 // };
 
-// const combinationSum = (candidates, target) => {
-//   res = [];
+const combinationSum = (candidates, target) => {
+  res = [];
 
-//   const backtracking = (index, curr, total) => {
-//     if (total === target) {
-//       res.push([...curr]);
-//       return;
-//     }
+  const backtracking = (index, curr, total) => {
+    if (total === target) {
+      res.push([...curr]);
+      return;
+    }
 
-//     if (index >= candidates.length || total > target) {
-//       return;
-//     }
+    if (index >= candidates.length || total > target) {
+      return;
+    }
 
-//     curr.push(candidates[index]);
-//     backtracking(index, curr, total + candidates[index]);
-//     curr.pop();
-//     backtracking(index + 1, curr, total);
-//   };
+    curr.push(candidates[index]);
+    backtracking(index, curr, total + candidates[index]);
+    curr.pop();
+    backtracking(index + 1, curr, total);
+  };
 
-//   backtracking(0, [], 0);
-//   return res;
-// };
+  backtracking(0, [], 0);
+  return res;
+};
 
 // const reult = combinationSum([2, 3, 6, 7], 7);
 // console.log("reult", reult);

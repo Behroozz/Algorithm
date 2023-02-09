@@ -1,3 +1,9 @@
+// Bitwise
+// [whatToShift] << (left) or >> (right) [HowManyTimes]
+// 1 >> 0 --> 001
+// 1 >> 1 --> 010
+// 1 >> 2 --> 100
+
 // Power Set: Power set P(S) of a set S is the set of all subsets of S. For example S = {a, b, c} then P(s) = {{}, {a}, {b}, {c}, {a,b}, {a, c}, {b, c}, {a, b, c}}.
 // If S has n elements in it then P(s) will have 2n elements
 
@@ -12,13 +18,13 @@
 
 // Value of Counter            Subset
 //    000                    -> Empty set
-//    001                    -> a
-//    010                    -> b
-//    011                    -> ab
-//    100                    -> c
-//    101                    -> ac
-//    110                    -> bc
-//    111                    -> abc
+//    001                    -> a ---> 001,010,100
+//    010                    -> b ---> 001,010,100
+//    011                    -> ab --> 001,010,100
+//    100                    -> c ---> 001,010,100
+//    101                    -> ac --> 001,010,100
+//    110                    -> bc --> 001,010,100
+//    111                    -> abc -> 001,010,100
 
 //https://blog.devgenius.io/power-set-algorithm-with-recursion-or-bits-cc3ffcfc0daa
 // const printPowerSet = (set) => {
