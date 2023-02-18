@@ -4,6 +4,7 @@
 // one to be returned) from the queue *without*
 // removing it.
 
+// First in first out
 class Queue {
   constructor() {
     this.data = [];
@@ -19,6 +20,14 @@ class Queue {
 
   peek() {
     return this.data[this.data.length - 1];
+  }
+
+  isEmpty() {
+    return this.data.length === 0;
+  }
+
+  getSize() {
+    return this.data.length;
   }
 }
 
