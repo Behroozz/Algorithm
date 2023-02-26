@@ -8,6 +8,9 @@
     "lodash": "^4.17.15",
     "ngrok": "^3.2.7"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
