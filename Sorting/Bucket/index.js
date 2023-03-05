@@ -109,7 +109,7 @@ function BucketSortWithLinkedList(arr) {
   return arr;
 }
 
-BucketSortWithLinkedList([2, 2, 1, 0, 1, 0]);
+BucketSort([2, 2, 1, 0, 1, 0, 0, 0, 2]);
 
 module.exports = {
   BucketSort,
